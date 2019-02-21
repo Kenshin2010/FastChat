@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    tools:context="vn.manroid.devchat.activity.LogInActivity">
+
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"
+        android:background="@drawable/chat"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/txtFontLogIn"
+        style="@style/CustomFont"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="FastChat" />
+
+    <RelativeLayout
+        android:layout_width="330dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/custom_login"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imgUser"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/user" />
+
+        <EditText
+            android:id="@+id/edtAcc"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignBottom="@+id/imgUser"
+            android:layout_toRightOf="@id/imgUser"
+            android:background="@android:color/transparent"
+            android:hint="Nhập email của bạn"
+            android:inputType="textEmailAddress"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColor="#000"
+            android:textColorHint="#000" />
+
+        <ImageView
+            android:id="@+id/imgPass"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/imgUser"
+            android:layout_margin="5dp"
+            android:src="@drawable/password" />
+
+        <EditText
+            android:id="@+id/edtPass"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/edtAcc"
+            android:layout_alignTop="@+id/imgPass"
+            android:layout_alignBottom="@+id/imgPass"
+            android:layout_toRightOf="@id/imgPass"
+            android:background="@android:color/transparent"
+            android:hint="Mật khẩu của bạn"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColor="#000"
+            android:textColorHint="#000" />
+
+        <Button
+            android:id="@+id/btnSignIn"
+            android:layout_width="110dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/edtPass"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/custom_login"
+            android:text="Đăng nhập"
+            android:textColor="#000" />
+
+        <Button
+            android:id="@+id/btnSignUp"
+            android:layout_width="110dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/edtPass"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/btnSignIn"
+            android:background="@drawable/custom_login"
+            android:text="Đăng ký"
+            android:textColor="#000" />
+
+    </RelativeLayout>
+
+
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/btnFacebook"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp" />
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/btnGmail"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal" />
+
+
+</LinearLayout>
