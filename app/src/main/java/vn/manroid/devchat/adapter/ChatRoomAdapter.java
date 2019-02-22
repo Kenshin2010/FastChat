@@ -61,10 +61,17 @@ public class ChatRoomAdapter extends RecyclerView.Adapter<ChatRoomAdapter.ChatRo
                 });
 
 
-        if (chat.getIdTenGuiRoom() == null)
-            holder.textView.setText("Người lạ" + " : \n" + chat.getThongDiepRoom());
-        else
-            holder.textView.setText(chat.getIdTenGuiRoom() + " : \n" + chat.getThongDiepRoom());
+        if (chat.getIdTenGuiRoom() == null) {
+            if (chat.getThongDiepRoom() != null)
+                holder.textView.setText("Người lạ" + " : \n" + chat.getThongDiepRoom());
+            else
+                holder.textView.setText("Người lạ" + " : \n" + "Tin nhắn bị lỗi");
+        } else {
+            if (chat.getThongDiepRoom() != null)
+                holder.textView.setText(chat.getIdTenGuiRoom() + " : \n" + chat.getThongDiepRoom());
+            else
+                holder.textView.setText(chat.getIdTenGuiRoom() + " : \n" + "Tin nhắn bị lỗi");
+        }
 
 
         Random r = new Random();
