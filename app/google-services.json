@@ -31,6 +31,14 @@
           }
         },
         {
+          "client_id": "857974585347-1jtgnu854e7kcd2jd8iv05bfiplbflbl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "vn.manroid.devchat",
+            "certificate_hash": "f0ddfcd774d69e615b50da6301cbea571292b4ce"
+          }
+        },
+        {
           "client_id": "857974585347-p56flsrdjuh5clr16u6sor7thkqbv82l.apps.googleusercontent.com",
           "client_type": 3
         }

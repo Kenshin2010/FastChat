@@ -1,23 +1,30 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        Manroid {
+            keyAlias 'manroid'
+            keyPassword 'android123'
+            storeFile file('D:/android/keystore/fastchat_ks.jks')
+            storePassword 'android123'
+        }
+    }
     compileSdkVersion 28
     buildToolsVersion "28.0.3"
     defaultConfig {
         applicationId "vn.manroid.devchat"
         minSdkVersion 15
         targetSdkVersion 28
-        versionCode 3
-        versionName "1.0.2"
+        versionCode 4
+        versionName "1.0.3"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
-
     buildTypes {
         release {
             minifyEnabled false // Enables code shrinking for the release build type.
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
-        debug{
+        debug {
             minifyEnabled false // Enables code shrinking for the release build type.
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
