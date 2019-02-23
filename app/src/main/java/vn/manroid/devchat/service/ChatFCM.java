@@ -50,7 +50,7 @@ public class ChatFCM extends FirebaseMessagingService {
 
             Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE);
             NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
-                    .setSmallIcon(R.drawable.icon_app)
+                    .setSmallIcon(R.drawable.ic_notification)
                     .setContentTitle("Fast Chat")
                     .setContentText(messageBody)
                     .setAutoCancel(true)
