@@ -2,6 +2,7 @@ package vn.manroid.devchat.activity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.Typeface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -70,7 +71,7 @@ public class LogInActivity extends AppCompatActivity
         FacebookSdk.setApplicationId("479285745752653");
         FacebookSdk.sdkInitialize(this);
         setContentView(R.layout.activity_log_in);
-
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
         initView();
         txtFont.setTypeface(Typeface.createFromAsset(getAssets(),
                 "myfont.ttf"));

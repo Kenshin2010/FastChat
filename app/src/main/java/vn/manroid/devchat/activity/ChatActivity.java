@@ -1,6 +1,7 @@
 package vn.manroid.devchat.activity;
 
 import android.content.Context;
+import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
@@ -169,7 +170,7 @@ public class ChatActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
-
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
         friend = (UserModel) getIntent().getSerializableExtra("ITEM");
 
         //===============================================//

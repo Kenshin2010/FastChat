@@ -21,6 +21,7 @@
         <activity
             android:name=".activity.SplashActivity"
             android:launchMode="singleTask"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,13 +32,26 @@
         <activity
             android:name=".activity.LogInActivity"
             android:launchMode="singleTask"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".activity.MainActivity"
             android:launchMode="singleTask"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <activity android:launchMode="singleTask" android:name=".activity.ListUserActivity" />
-        <activity android:launchMode="singleTask" android:name=".activity.ChatActivity" />
+        <activity
+            android:name=".activity.ListUserActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ChatActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.ChatRoomActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
 
         <service android:name=".service.ChatFCM">
             <intent-filter>
@@ -45,7 +59,7 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".activity.ChatRoomActivity" />
+
     </application>
 
 </manifest>
