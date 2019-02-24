@@ -73,13 +73,13 @@
         android:layout_height="50dp" />
 
     <Button
-        android:id="@+id/btnInfor"
+        android:id="@+id/btnMore"
         android:layout_gravity="center_horizontal"
         android:textColor="#fff"
         android:background="@drawable/custom_main"
         android:layout_margin="5dp"
         android:gravity="center"
-        android:text="Thông tin "
+        android:text="APP KHÁC"
         android:layout_width="150dp"
         android:layout_height="50dp" />
 

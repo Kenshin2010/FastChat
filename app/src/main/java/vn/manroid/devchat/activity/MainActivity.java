@@ -19,8 +19,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.facebook.login.LoginManager;
+import com.facebook.share.model.ShareHashtag;
+import com.facebook.share.model.ShareLinkContent;
+import com.facebook.share.widget.ShareDialog;
 import com.google.firebase.auth.FirebaseAuth;
 
+import vn.manroid.devchat.BuildConfig;
 import vn.manroid.devchat.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -29,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button btnStartChat, btnShare, btnInfor, btnLogOut, btnChatRoom;
     private Intent intent;
     private AlertDialog dialog;
+    private ShareDialog shareDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
+        shareDialog = new ShareDialog(this);
         txtFont = (TextView) findViewById(R.id.txtFontMain);
         txtMarqueeText = (TextView) findViewById(R.id.MarqueeText);
 
@@ -47,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         btnStartChat = (Button) findViewById(R.id.btnStartChat);
         btnChatRoom = (Button) findViewById(R.id.btnChatRoom);
-        btnInfor = (Button) findViewById(R.id.btnInfor);
+        btnInfor = (Button) findViewById(R.id.btnMore);
         btnShare = (Button) findViewById(R.id.btnShare);
         btnLogOut = (Button) findViewById(R.id.btnLogOut);
 
@@ -72,46 +77,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
 
-            case R.id.btnInfor:
-//                Toast.makeText(this, "Ứng dụng được phát triển bởi Thư Nguyễn", Toast.LENGTH_SHORT).show();
-//                String url = null;
-//                Intent intent = null;
-//                url = "https://www.facebook.com/profile.php?id=100007837202373";
-//                intent = new Intent(Intent.ACTION_VIEW);
-//                intent.setData(Uri.parse(url));
+            case R.id.btnMore:
+                final String appPackageName = getPackageName();
+                try {
+//                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://developer?id=Manroid")));
+                } catch (android.content.ActivityNotFoundException anfe) {
+//                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackageName)));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/developer?id=Manroid")));
+                }
 //                try {
-//                    startActivity(intent);
-//                } catch (ActivityNotFoundException e) {
-//                    Toast.makeText(this, "Couldn't launch the bug reporting website", Toast.LENGTH_LONG).show();
+//                    Intent shareIntent = new Intent(Intent.ACTION_SEND);
+//                    shareIntent.setType("text/plain");
+//                    shareIntent.putExtra(Intent.EXTRA_SUBJECT, "My application name");
+//                    String shareMessage= "\nLet me recommend you this application\n\n";
+//                    shareMessage = shareMessage + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID +"\n\n";
+//                    shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
+//                    startActivity(Intent.createChooser(shareIntent, "choose one"));
+//                } catch(Exception e) {
+//                    //e.toString();
 //                }
-                Toast.makeText(this, "Đang cập nhật :D !!!", Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.btnShare:
-//                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) // At least KitKat
-//                {
-//                    String defaultSmsPackageName = Telephony.Sms.getDefaultSmsPackage(this); // Need to change the build to API 19
-//
-//                    Intent sendIntent = new Intent(Intent.ACTION_SEND);
-//                    sendIntent.setType("text/plain");
-//                    sendIntent.putExtra(Intent.EXTRA_TEXT, "Chia sẻ ứng dụng cho bạn bè ....!!!");
-//
-//                    if (defaultSmsPackageName != null)// Can be null in case that there is no default, then the user would be able to choose
-//                    // any app that support this intent.
-//                    {
-//                        sendIntent.setPackage(defaultSmsPackageName);
-//                    }
-//                    startActivity(sendIntent);
-//
-//                } else // For early versions, do what worked for you before.
-//                {
-//                    Intent smsIntent = new Intent(android.content.Intent.ACTION_VIEW);
-//                    smsIntent.setType("vnd.android-dir/mms-sms");
-//                    smsIntent.putExtra("address", "phoneNumber");
-//                    smsIntent.putExtra("sms_body", "message");
-//                    startActivity(smsIntent);
-//                }
-                Toast.makeText(this, "Đang cập nhật :D !!!", Toast.LENGTH_SHORT).show();
+                if (ShareDialog.canShow(ShareLinkContent.class)) {
+                    ShareLinkContent content = new ShareLinkContent.Builder()
+                            .setContentUrl(Uri.parse("https://play.google.com/store/apps/details?id=vn.manroid.devchat"))
+                            .build();
+
+                    shareDialog.show(content);
+
+                }
                 break;
 
             case R.id.btnLogOut:
