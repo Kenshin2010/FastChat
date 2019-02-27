@@ -64,6 +64,7 @@ public class ChatRoomActivity extends AppCompatActivity
     private ArrayList<ChatRoomModel> mdRoom;
     public static Activity activity;
     private String stringUri;
+    private List<ChatRoomModel> listUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -137,9 +138,9 @@ public class ChatRoomActivity extends AppCompatActivity
         reference = firebaseDatabase.getReference("ListChatRoom");
         reference.orderByChild("ngay").addChildEventListener(onChildChanged);
 
-        List<ChatRoomModel> list = new ArrayList<>();
+        listUser = new ArrayList<>();
 
-        adapter = new ChatRoomAdapter(list, this);
+        adapter = new ChatRoomAdapter(listUser, this);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         rvChatRoom.setLayoutManager(mLayoutManager);
         rvChatRoom.setItemAnimator(new DefaultItemAnimator());
@@ -215,7 +216,7 @@ public class ChatRoomActivity extends AppCompatActivity
                         , 0
                         , photo);
 
-                adapter.getListData().add(chatRoomModel);
+                listUser.add(chatRoomModel);
                 adapter.notifyDataSetChanged();
 
                 Log.d("chatroom", "=============" + chatRoomModel.getThongDiepRoom());
@@ -229,7 +230,7 @@ public class ChatRoomActivity extends AppCompatActivity
 
         @Override
         public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
+            Log.d("onChildChanged", dataSnapshot.toString());
         }
 
         @Override

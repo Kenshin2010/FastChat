@@ -62,7 +62,7 @@ public class ChatRoomAdapter extends RecyclerView.Adapter<ChatRoomAdapter.ChatRo
                 });
 
 
-        if (chat.getIdTenGuiRoom() == null) {
+        if (chat.getIdTenGuiRoom() == null || chat.getIdTenGuiRoom().equals("")) {
             if (chat.getThongDiepRoom() != null)
                 holder.textView.setText("Người lạ" + " : \n" + chat.getThongDiepRoom());
             else
