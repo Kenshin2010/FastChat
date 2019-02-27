@@ -25,6 +25,8 @@ import android.view.WindowManager;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
+import vn.manroid.devchat.R;
+
 /**
  * Created by rockerhieu on 9/20/16.
  */
@@ -87,5 +89,53 @@ public final class Utils {
 
     public static int getKeyboardHeight() {
         return sKeyboardHeight;
+    }
+
+    public static int setColorName(String name) {
+        String s = name.toLowerCase();
+        int color = R.color.color0;
+        if (s.startsWith("w")){
+            color = R.color.color1;
+        }else if (s.startsWith("a")){
+            color = R.color.color2;
+        } else if (s.startsWith("b")) {
+            color = R.color.color3;
+        } else if (s.startsWith("c")) {
+            color = R.color.color4;
+        } else if (s.startsWith("d")) {
+            color = R.color.color5;
+        } else if (s.startsWith("e")) {
+            color = R.color.color6;
+        } else if (s.startsWith("f")) {
+            color = R.color.color7;
+        } else if (s.startsWith("g")) {
+            color = R.color.color8;
+        } else if (s.startsWith("h")) {
+            color = R.color.color9;
+        } else if (s.startsWith("k")) {
+            color = R.color.color10;
+        } else if (s.startsWith("l")) {
+            color = R.color.color11;
+        } else if (s.startsWith("n")) {
+            color = R.color.color12;
+        } else if (s.startsWith("o")) {
+            color = R.color.color13;
+        } else if (s.startsWith("p")) {
+            color = R.color.color14;
+        } else if (s.startsWith("q")) {
+            color = R.color.color15;
+        } else if (s.startsWith("r")) {
+            color = R.color.color16;
+        } else if (s.startsWith("s")) {
+            color = R.color.color17;
+        } else if (s.startsWith("t")) {
+            color = R.color.color18;
+        } else if (s.startsWith("u")) {
+            color = R.color.color19;
+        } else if (s.startsWith("v")) {
+            color = R.color.color20;
+        }
+        return color;
+
     }
 }

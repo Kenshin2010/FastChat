@@ -19,8 +19,10 @@ import vn.manroid.devchat.activity.SplashActivity;
  * Created by manro on 17/06/2017.
  */
 
-public class ChatFCM extends FirebaseMessagingService {
+public class CloundService extends FirebaseMessagingService {
+
     String TAG = "FastChat";
+
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
         try {
@@ -28,7 +30,6 @@ public class ChatFCM extends FirebaseMessagingService {
                 Log.e(TAG,remoteMessage.getNotification().getBody());
                 // Log.e(TAG,remoteMessage.getNotification().getTitle());
                 sendMessage(remoteMessage.getNotification().getBody());
-
 
             }
 

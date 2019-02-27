@@ -53,7 +53,7 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
-        <service android:name=".service.ChatFCM">
+        <service android:name=".service.CloundService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>

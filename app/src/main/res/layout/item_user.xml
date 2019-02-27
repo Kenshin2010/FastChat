@@ -4,31 +4,32 @@
     android:layout_height="match_parent">
 
     <vn.manroid.devchat.custom.CustomView
-        android:layout_margin="10dp"
-        android:layout_centerHorizontal="true"
         android:id="@+id/imgAvatar"
         android:layout_width="70dp"
         android:layout_height="70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
         android:src="@drawable/userapp" />
 
     <ImageView
-        android:layout_marginTop="5dp"
-        android:src="@drawable/online"
-        android:layout_alignLeft="@+id/imgAvatar"
-        android:layout_below="@+id/imgAvatar"
         android:id="@+id/imgStatus"
         android:layout_width="16dp"
-        android:layout_height="16dp" />
-    <TextView
-        android:layout_marginRight="2dp"
-        android:textStyle="bold"
-        android:textSize="16sp"
-        android:text="Nguyen Van A"
-        android:layout_alignBaseline="@+id/imgAvatar"
-        android:layout_marginLeft="5dp"
-        android:layout_toRightOf="@+id/imgStatus"
+        android:layout_height="16dp"
         android:layout_below="@+id/imgAvatar"
+        android:layout_alignLeft="@+id/imgAvatar"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/online" />
+
+    <TextView
         android:id="@+id/txtUserName"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imgAvatar"
+        android:layout_alignBaseline="@+id/imgAvatar"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="2dp"
+        android:layout_toRightOf="@+id/imgStatus"
+        android:text="Nguyen Van A"
+        android:textSize="14sp"
+        android:textStyle="bold" />
 </RelativeLayout>

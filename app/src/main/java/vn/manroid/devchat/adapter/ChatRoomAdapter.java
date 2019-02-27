@@ -20,6 +20,7 @@ import java.util.Random;
 import vn.manroid.devchat.R;
 import vn.manroid.devchat.custom.CustomView;
 import vn.manroid.devchat.model.ChatRoomModel;
+import vn.manroid.devchat.util.Utils;
 
 public class ChatRoomAdapter extends RecyclerView.Adapter<ChatRoomAdapter.ChatRooomHolder> {
 
@@ -76,28 +77,8 @@ public class ChatRoomAdapter extends RecyclerView.Adapter<ChatRoomAdapter.ChatRo
 
         Random r = new Random();
         int num = r.nextInt(10);
-
-        switch (num) {
-            case 0:
-                holder.textView.setTextColor(context.getResources().getColor(R.color.xanhdatroi));
-                break;
-            case 1:
-                holder.textView.setTextColor(context.getResources().getColor(R.color.mautim));
-                break;
-            case 2:
-                holder.textView.setTextColor(context.getResources().getColor(R.color.maudo));
-                break;
-            case 3:
-                holder.textView.setTextColor(context.getResources().getColor(R.color.mauhong));
-                break;
-            case 4:
-                holder.textView.setTextColor(context.getResources().getColor(R.color.maunau));
-                break;
-            case 5:
-                holder.textView.setTextColor(context.getResources().getColor(R.color.vang));
-                break;
-
-        }
+        if (chat.getThongDiepRoom() != null)
+            holder.textView.setTextColor(context.getResources().getColor(Utils.setColorName(chat.getThongDiepRoom())));
 
     }
 

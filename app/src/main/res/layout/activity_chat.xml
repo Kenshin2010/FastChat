@@ -26,7 +26,7 @@
         <vn.manroid.devchat.lib.emoji.EmojiconEditText
             android:id="@+id/edtMessage"
             android:layout_width="0dp"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/custom_edit_text"
             android:gravity="left|center_vertical"
