@@ -6,38 +6,6 @@
     <color name="custom">#f18900</color>
     <color name="background">#fffcd03c</color>
 
-    <color name="horizontal_divider">#8f8f8f</color>
-    <color name="horizontal_vertical">#8f8f8f</color>
-
-    <!-- select color for textview -->
-
-    <color name="xanhdatroi">#001eff</color>
-    <color name="mautim">#780480</color>
-    <color name="maudo">#ff0707</color>
-    <color name="mauhong">#ff00b7</color>
-    <color name="maunau">#ff8d02</color>
-    <color name="vang">#ffff00</color>
-
-    <color name="color0">#000000</color>
-    <color name="color1">#001eff</color>
-    <color name="color2">#780480</color>
-    <color name="color3">#ff0707</color>
-    <color name="color4">#ff00b7</color>
-    <color name="color5">#ff8d02</color>
-    <color name="color6">#ffff00</color>
-    <color name="color7">#DBDB87</color>
-    <color name="color8">#4840E4</color>
-    <color name="color9">#BD72CC</color>
-    <color name="color10">#5E5E50</color>
-    <color name="color11">#91C993</color>
-    <color name="color12">#75756B</color>
-    <color name="color13">#57C6D6</color>
-    <color name="color14">#BDA4AC</color>
-    <color name="color15">#DDB7B6</color>
-    <color name="color16">#4F5EAA</color>
-    <color name="color17">#5CA0A8</color>
-    <color name="color18">#9C27B0</color>
-    <color name="color19">#1B2B3C</color>
-    <color name="color20">#4F6950</color>
+    
 
 </resources>
