@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Fast Chat</string>
+    <string name="welcome">Welcome</string>
+    <string name="description_login">Chào mừng bạn đến với FastChat. Không ai biết bạn là ai, hãy tự tin giao tiếp.</string>
+    <string name="description_register">Hãy tạo cho mình một bí danh thôi nào.</string>
+    <string name="hint_account">Email address</string>
+    <string name="login">Đăng nhập</string>
+    <string name="email_or_password">Email or user name</string>
+    <string name="forget_password">Forget password</string>
+    <string name="password_hint">Password</string>
+    <string name="register">Đăng ký</string>
 </resources>
